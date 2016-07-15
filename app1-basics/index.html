@@ -1,12 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="filterApp">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
+	<title>Drills Set 1-3: List from Service with filter</title>
 </head>
-<body>
+<body ng-controller="FilterCtrl">
+
+<input type="text" placeholder="Sort by name" ng-model="Filter.name">
+<input type="text" placeholder="Sort by style" ng-model="Filter.style">
+
+
+<ul ng-repeat="item in testData | filter:Filter">
+	<li>Name: {{item.name}}</li>
+	<li>Job: {{item.job}}</li>
+	<li>Style: {{item.style}}</li>
+</ul>
 
 
 
