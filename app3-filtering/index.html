@@ -1,11 +1,13 @@
 <html ng-app="filterApp">
 	<body ng-controller="filterCtrl">
-		{{inputLabel}}
-
-		<input type="text" ng-model="searchMe">
+		<label for="all">Search any field:</label>
+		<input type="text" ng-model="searchMe.$">
+		<br>
+		<label for="name">Search by name:</label>
+		<input type="text" name="name" ng-model="searchMe.name">
 
 		<ul>
-			<li ng-repeat="item in data | filter:searchMe ">
+			<li ng-repeat="item in data | filter:searchMe:strict">
 				<strong>Name: </strong> {{item.name}}<br>
 				<strong>Phone: </strong> {{item.phone}}<br>
 				<strong>Email: </strong> {{item.email}}<br>
